@@ -1,12 +1,12 @@
-// Sample products (Home Decoration) using local images
-const products = [
+// Initial products
+let products = [
   { id: 1, name: "Vase en céramique", price: 250, quantity: 10, image: "images/vase.jpg" },
   { id: 2, name: "Lampe moderne", price: 450, quantity: 5, image: "images/lampe.jpg" },
   { id: 3, name: "Tableau mural", price: 300, quantity: 7, image: "images/tableau.jpg" },
   { id: 4, name: "Tapis design", price: 600, quantity: 3, image: "images/tapis.jpg" }
 ];
 
-// Function to display products
+// Display products
 function displayProducts() {
   const productList = document.getElementById("product-list");
   productList.innerHTML = "";
@@ -24,6 +24,27 @@ function displayProducts() {
   });
 }
 
-// Load products on page load
-window.onload = displayProducts;
+// Handle form submission
+document.getElementById("product-form").addEventListener("submit", function(e) {
+  e.preventDefault();
 
+  const name = document.getElementById("name").value;
+  const price = parseInt(document.getElementById("price").value);
+  const quantity = parseInt(document.getElementById("quantity").value);
+  const image = "images/" + document.getElementById("image").value;
+
+  // Generate a new id
+  const id = products.length ? products[products.length - 1].id + 1 : 1;
+
+  // Add new product
+  products.push({ id, name, price, quantity, image });
+
+  // Refresh the product list
+  displayProducts();
+
+  // Reset the form
+  document.getElementById("product-form").reset();
+});
+
+// Initial load
+window.onload = displayProducts;

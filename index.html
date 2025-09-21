@@ -12,6 +12,25 @@
   </header>
 
   <main>
+    <!-- Form to add a product -->
+    <section id="add-product">
+      <h2>Ajouter un produit</h2>
+      <form id="product-form">
+        <input type="text" id="name" placeholder="Nom du produit" required>
+        <input type="number" id="price" placeholder="Prix" required>
+        <input type="number" id="quantity" placeholder="Quantité" required>
+        <select id="image" required>
+          <option value="">Choisir une image</option>
+          <option value="vase.jpg">Vase</option>
+          <option value="lampe.jpg">Lampe</option>
+          <option value="tableau.jpg">Tableau</option>
+          <option value="tapis.jpg">Tapis</option>
+        </select>
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <!-- Product list -->
     <section id="product-list">
       <!-- Products will be displayed here -->
     </section>
