@@ -88,8 +88,8 @@ header {
 
 .product-card img {
   width: 100%;
-  height: 150px;       /* Fixed height to prevent huge images */
-  object-fit: cover;    /* Keep aspect ratio, crop if needed */
+  height: 150px;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -104,8 +104,35 @@ header {
   color: #555;
 }
 
+.product-card button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.product-card button:hover {
+  opacity: 0.8;
+}
+
+.product-card button:nth-child(1) {
+  background-color: #4CAF50;
+  color: white;
+  margin-right:5px;
+}
+
+.product-card button:nth-child(2) {
+  background-color: #f44336;
+  color: white;
+}
+
 @media (min-width: 768px) {
   .product-card img {
     height: 200px;
   }
 }
+
+
+
