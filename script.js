@@ -90,3 +90,14 @@ function deleteProduct(id, button) {
 
 // Initial load
 window.onload = displayProducts;
+// Delete product with fade-out animation
+function deleteProduct(id, button) {
+  const card = button.parentElement;
+  card.classList.add("fade-out");
+
+  // Wait for animation to finish
+  setTimeout(() => {
+    products = products.filter(p => p.id !== id);
+    displayProducts();
+  }, 500);
+}
